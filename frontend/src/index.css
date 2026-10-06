@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #060911;
+    color: #f8fafc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Ambient Studio Radial Glow Background */
+.bg-studio-ambient {
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(139, 92, 246, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
+/* Product-Level Glassmorphism Cards */
+.glass-panel {
+  background: rgba(13, 19, 33, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-interactive {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(20, 29, 49, 0.85);
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Equalizer Animation Bars */
+@keyframes eqPulse {
+  0%, 100% { height: 6px; }
+  50% { height: 32px; }
+}
+
+.animate-eq-1 { animation: eqPulse 0.75s ease-in-out infinite; }
+.animate-eq-2 { animation: eqPulse 1.05s ease-in-out infinite 0.15s; }
+.animate-eq-3 { animation: eqPulse 0.65s ease-in-out infinite 0.35s; }
+.animate-eq-4 { animation: eqPulse 1.25s ease-in-out infinite 0.25s; }
+.animate-eq-5 { animation: eqPulse 0.85s ease-in-out infinite 0.45s; }
